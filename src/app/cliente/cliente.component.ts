@@ -43,12 +43,11 @@ export class ClienteComponent implements OnInit {
         title: 'Alerta!...',
         text: 'Ingrese un ID correcto por favor!',
       })
-      this.Id = "";
+      this.Id = null;
       this.Boolean = true;
     }
       this.ServicioCliente.Consultar(this.Id).subscribe((data)=>{
         this.Entidad = data;
-        this.Id = this.Entidad.Id;
         this.Nombre = this.Entidad.Nombre;
         this.Direccion = this.Entidad.Direccion;
         this.RFC = this.Entidad.RFC;
@@ -86,6 +85,7 @@ export class ClienteComponent implements OnInit {
           'Los Datos han sido Eliminados.',
           'success'
         )
+        this.Limpiar();
       }
     })
   }
