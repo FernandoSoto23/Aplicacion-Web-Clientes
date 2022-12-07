@@ -1,0 +1,7 @@
+{
+    "/cliente/*":{
+        "target" : "https://localhost:44379",
+        "secure" : "false",
+        "loglevel" : "debug"
+    }
+}

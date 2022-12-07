@@ -1,0 +1,16 @@
+
+
+.barra{
+    background-color: rgb(47, 47, 47);
+}
+a{
+    
+    color: gold;
+}
+a:hover{
+    color: white;
+}
+
+ul li{
+    color: gold;
+}

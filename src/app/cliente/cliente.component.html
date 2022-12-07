@@ -1,0 +1,40 @@
+
+<div class="card border-warning contenedor">
+    <div class="card-header">
+      Clientes  
+    </div>
+    <div class="card-body">
+        <table>
+            <tr>
+                <td><label class="colFormLabel">ID:</label></td>
+                <td><input class="form-control" [disabled]="Boolean2" [(ngModel)]="Id" (keypress)="validarTecla($event)" placeholder="Ingrese un ID"></td>
+            </tr>
+            <tr>
+                <td><label class="colFormLabel">Nombre</label></td>
+                <td><input class="form-control" [disabled]="Boolean" [(ngModel)]="Nombre"></td>
+            </tr>
+            <tr>
+                <td><label class="colFormLabel">Direccion</label></td>
+                <td><input class="form-control" [disabled]="Boolean" [(ngModel)]="Direccion"></td>
+            </tr>
+            <tr>
+                <td><label class="colFormLabel">RFC</label></td>
+                <td><input class="form-control" [disabled]="Boolean" [(ngModel)]="RFC"></td>
+            </tr>
+            <tr>
+                <td><label class="colFormLabel">Correo electronico</label></td>
+                <td><input type="email" class="form-control" [disabled]="Boolean" [(ngModel)]="Correo"></td>
+            </tr>
+            <tr>
+                <td><label class="colFormLabel">Telefono</label></td>
+                <td><input type="tel" class="form-control" [disabled]="Boolean" [(ngModel)]="Tel"></td>
+            </tr>
+        </table>
+        <button style="margin: 5px;" class="btn btn-primary" type="button" [disabled]="Boolean2"(click)="Mostrar()">Consultar</button>
+        <button style="margin: 5px;"class="btn btn-success" type="button" [disabled]="Boolean" (click)="Guardar()">Guardar</button>
+        <button style="margin: 5px;" class="btn btn-danger" type="button" [disabled]="Boolean" (click)="Eliminar()">Eliminar</button> 
+        <button style="margin: 5px;" class="btn btn-danger" type="button" [disabled]="Boolean" (click)="Limpiar()">Cancelar</button>  
+    </div>
+  </div>
+
+
