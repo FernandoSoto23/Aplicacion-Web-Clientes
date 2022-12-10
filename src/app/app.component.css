@@ -1,16 +1,18 @@
 
+/* Centrar Login */
 
-.barra{
-    background-color: rgb(47, 47, 47);
+.contenedor{
+    max-width: 120rem;
+    width: 50%;
+    margin: 0 auto;
 }
-a{
-    
-    color: gold;
-}
-a:hover{
-    color: white;
+.contenedor-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-ul li{
-    color: gold;
+
+.copyright{
+    text-align: center;
 }

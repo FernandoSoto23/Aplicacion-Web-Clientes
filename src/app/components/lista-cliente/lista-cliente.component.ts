@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicioListaClienteService } from '../Services/servicio-lista-cliente.service';
+import { ServicioListaClienteService } from '../../Services/servicio-lista-cliente.service';
 
 
 
 
 @Component({
   selector: 'app-lista-cliente',
-  templateUrl: './lista-cliente.component.html'
+  templateUrl: './lista-cliente.component.html',
+  styleUrls: ['./lista-cliente.component.css']
 })
 
 export class ListaClienteComponent implements OnInit {

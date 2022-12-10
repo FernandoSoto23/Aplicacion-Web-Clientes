@@ -1,0 +1,28 @@
+
+
+<div class="card border-warning contenedor">
+    <div class="card-header">
+      Nuevo Pedido 
+    </div>
+    <div class="card-body">
+        <table>
+            <tr>
+                <td><label class="colFormLabel">Id del Cliente:</label></td>
+                <td><input class="form-control" [(ngModel)]="IdCliente"  placeholder="Ingrese un ID"></td>
+            </tr>
+            <tr>
+                <td><label class="colFormLabel">Nombre del Pedido</label></td>
+                <td><input class="form-control"  [(ngModel)]="NombrePedido" (keypress)="validarTecla($event)"></td>
+            </tr>
+            
+        </table>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"  >Observaciones del Pedido</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="ObsPedido"></textarea>
+          </div>
+        <button style="margin: 5px;"class="btn btn-success" type="button" (click)="Guardar()">Añadir Pedido</button>
+        <button style="margin: 5px;" class="btn btn-danger" type="button" (click)="Vaciar()">Cancelar</button>  
+    </div>
+  </div>
+
+

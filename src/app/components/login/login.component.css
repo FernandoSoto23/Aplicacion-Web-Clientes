@@ -1,0 +1,10 @@
+
+
+.contenedor{
+    border: 1px solid red;
+    box-shadow: 1px 4px 15px 0px rgba(0,0,0,1);
+    -webkit-box-shadow: 1px 4px 15px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 4px 15px 0px rgba(0,0,0,1);
+    width: 30rem;
+    margin: 10% auto;
+}

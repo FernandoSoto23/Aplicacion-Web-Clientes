@@ -1,0 +1,92 @@
+
+
+<div class="card contenedor" >
+    <div class="card" *ngIf="MostrarLogueo">
+        <div class="card-header">
+            Login
+          </div>
+          <div class="card-body">
+              <table>
+                  <tr>
+                      <td><label class="form-label" >Usuario: </label></td>
+                      <td><input class="form-control" [(ngModel)]="User"/></td>
+                  </tr>
+                  <tr>
+                      <td><label class="form-label" >Contraseña: </label></td>
+                      <td><input type="password" class="form-control" [(ngModel)]="Pwd" (keypress)="validarTecla($event)"/></td>
+                  </tr>
+      
+                  <tr>
+                      <td><button class="btn btn-success" (click)="Loguear()">Iniciar</button></td>
+                      <td><button type="button" class="btn btn-outline-secondary" (click)="NuevoUsuario()">Nuevo Usuario</button></td>
+                  </tr>
+              </table>
+          </div>
+    </div>
+
+ 
+
+    <div class="card" *ngIf="MostrarRegistro">
+        <div class="card-header">
+          Registrar Usuario
+        </div>
+        <div class="card-body">
+            <table>
+                <tr>
+                    <td><label>Nombre: </label></td>
+                    <td><input class="form-control" [(ngModel)]="Nombre"></td>
+                </tr>
+                <tr>
+                    <td><label>Usuario: </label></td>
+                    <td><input class="form-control" [(ngModel)]="User" required></td>
+                </tr>
+                <tr>
+                    <td><label>Correo Electronico: </label></td>
+                    <td><input class="form-control" type="email" [(ngModel)]="Correo"></td>
+                </tr>
+                <tr>
+                    <td><label>Contraseña: </label></td>
+                    <td><input class="form-control" type="password" [(ngModel)]="Pwd"></td>
+                </tr>
+                <tr>
+                    <td><label>Telefono: </label></td>
+                    <td><input class="form-control" [(ngModel)]="Telefono"></td>
+                </tr>
+                <button style="margin: 5px;" class="btn btn-primary" type="button" (click)="Registrar()">Registrar</button>
+                <button style="margin: 5px;"class="btn btn-danger" type="button" (click)="Regresar()">Regresar</button> 
+            </table>
+
+            
+            <div *ngIf="spiner">
+                <div class="spinner-grow text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-secondary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-info" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-dark" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+            </div>
+        </div>
+      </div>
+  </div>
+
+
+
+
+  <router-outlet></router-outlet>
+  
+

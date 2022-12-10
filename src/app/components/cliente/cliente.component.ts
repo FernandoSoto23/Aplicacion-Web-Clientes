@@ -2,14 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule,NgModel} from '@angular/forms'
 import { EMPTY } from 'rxjs';
 import Swal from 'sweetalert2'
-import { ServicioClienteService } from '../Services/servicio-cliente.service';
+import { ServicioClienteService } from '../../Services/servicio-cliente.service';
+import { Router,ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-cliente',
   templateUrl: './cliente.component.html',
   styleUrls: ['./cliente.component.css']
 })
 export class ClienteComponent implements OnInit {
-
+  
   Boolean:any;
   Boolean2:any;
   Id:any;
@@ -20,7 +22,9 @@ export class ClienteComponent implements OnInit {
   Tel:any;
 
   Entidad:any;
-  constructor(private ServicioCliente : ServicioClienteService) 
+  constructor(private ServicioCliente : ServicioClienteService, 
+              private router:Router,
+              private  route : ActivatedRoute) 
   {
     this.Boolean = true;
   }

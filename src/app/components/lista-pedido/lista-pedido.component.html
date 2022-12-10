@@ -1,0 +1,52 @@
+
+
+
+
+<div class="contenedor">
+    <table>
+      <tr>
+        <td><input [(ngModel)]="filtro" class="form-control" placeholder="Buscar por Nombre" (keypress)="validarTecla($event)"></td>
+        <td><button class="btn btn-dark" (click)="Filtrar()" >Filtrar</button></td>
+      </tr>
+    </table>
+    <div class="card border-primary">
+        <div class="card-header">
+          Clientes  
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                  <tr>
+                    <th scope="col">Id del Pedido</th>
+                    <th scope="col">Id del Cliente</th>
+                    <th scope="col">Nombre Del Cliente</th>
+                    <th scope="col">Nombre del Pedido</th>
+                    <th scope="col">Observaciones del Pedido</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="ocultar" class="table-group-divider">
+                  <tr *ngFor="let e of Entidad">
+                    <th scope="row">{{e.IdPedido}}</th>
+                    <td>{{e.IdCliente}}</td>
+                    <td>{{e.NombreCliente}}</td>
+                    <td>{{e.NombrePedido}}</td>
+                    <td>{{e.Observaciones}}</td>                    
+                  </tr>
+                </tbody>
+    
+                <tbody *ngIf="ocultar2" class="table-group-divider">
+                  <tr *ngFor="let e of data">
+                    <th scope="row">{{e.IdPedido}}</th>
+                    <td>{{e.IdCliente}}</td>
+                    <td>{{e.NombreCliente}}</td>
+                    <td>{{e.NombrePedido}}</td>
+                    <td>{{e.Observaciones}}</td>                    
+                  </tr>
+                </tbody>
+              </table>
+              
+        </div>
+      </div>
+    
+  </div>
+  
