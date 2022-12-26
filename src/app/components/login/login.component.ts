@@ -4,6 +4,8 @@ import { ServicioLoginService } from '../../Services/servicio-login.service';
 import Swal from 'sweetalert2'
 import { NgForm, NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+
 
 @Component({
   selector: 'app-login',
@@ -27,7 +29,7 @@ export class LoginComponent implements OnInit {
   MostrarRegistro : Boolean = false;
   spiner : Boolean = false;
 
-  constructor( private ServicioLogin : ServicioLoginService,private router:Router) {
+  constructor( private ServicioLogin : ServicioLoginService,private router:Router,private cookies:CookieService) {
 
    }
 
@@ -39,9 +41,10 @@ export class LoginComponent implements OnInit {
     this.ServicioLogin.Consultar(this.User,this.Pwd).subscribe((data)=>{
       this.Entidad = data;
       this.Id = this.Entidad.Id;
+      this.cookies.set("token",this.Id.toString());
       this.Token(this.Id);
       if(this.Id > 0){
-        this.router.navigate(['/Cliente']);
+        this.router.navigate(['/Home']);
       }
     });
 
@@ -103,7 +106,7 @@ export class LoginComponent implements OnInit {
       varID = id;
   }
   EstaLogueado(){
-    if(varID > 0){
+    if(parseInt(this.cookies.get("token")) > 0){
       return true;
     }
     else{
@@ -111,7 +114,7 @@ export class LoginComponent implements OnInit {
     }
   }
   DesLoguear(){
-    varID = 0;
+    this.cookies.set("token","0");
     return false;
   }
 }

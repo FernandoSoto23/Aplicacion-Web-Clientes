@@ -13,6 +13,7 @@ import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { ListaPedidoComponent } from './components/lista-pedido/lista-pedido.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     SharedModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

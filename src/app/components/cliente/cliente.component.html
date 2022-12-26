@@ -2,7 +2,7 @@
 
 
 
-<div class="card border-warning contenedor">
+<div class="card border-warning contenedor" *ngIf="EstaLog()" id="dark">
     <div class="card-header">
       Clientes  
     </div>
@@ -10,33 +10,33 @@
         <table>
             <tr>
                 <td><label class="colFormLabel">ID: </label></td>
-                <td><input class="form-control" [disabled]="Boolean2" [(ngModel)]="Id" (keypress)="validarTecla($event)" placeholder="Ingrese un ID"></td>
+                <td><input class="form-control input-id" [disabled]="Boolean2" [(ngModel)]="Id" (keypress)="validarTecla($event)" placeholder="ID"></td>
             </tr>
             <tr>
                 <td><label class="colFormLabel">Nombre: </label></td>
-                <td><input class="form-control" [disabled]="Boolean" [(ngModel)]="Nombre"></td>
+                <td><input class="form-control input-editar" [disabled]="Boolean" [(ngModel)]="Nombre"></td>
             </tr>
             <tr>
                 <td><label class="colFormLabel">Direccion: </label></td>
-                <td><input class="form-control" [disabled]="Boolean" [(ngModel)]="Direccion"></td>
+                <td><input class="form-control input-editar" [disabled]="Boolean" [(ngModel)]="Direccion"></td>
             </tr>
             <tr>
                 <td><label class="colFormLabel">RFC: </label></td>
-                <td><input class="form-control" [disabled]="Boolean" [(ngModel)]="RFC"></td>
+                <td><input class="form-control input-editar" [disabled]="Boolean" [(ngModel)]="RFC"></td>
             </tr>
             <tr>
                 <td><label class="colFormLabel">Correo Electronico: </label></td>
-                <td><input type="email" class="form-control" [disabled]="Boolean" [(ngModel)]="Correo"></td>
+                <td><input type="email" class="form-control input-editar" [disabled]="Boolean" [(ngModel)]="Correo"></td>
             </tr>
             <tr>
                 <td><label class="colFormLabel">Telefono: </label></td>
-                <td><input type="tel" class="form-control" [disabled]="Boolean" [(ngModel)]="Tel"></td>
+                <td><input type="tel" class="form-control input-editar" [disabled]="Boolean" [(ngModel)]="Tel"></td>
             </tr>
         </table>
-        <button style="margin: 5px;" class="btn btn-primary" type="button" [disabled]="Boolean2"(click)="Mostrar()">Consultar</button>
-        <button style="margin: 5px;"class="btn btn-success" type="button" [disabled]="Boolean" (click)="Guardar()">Guardar</button>
-        <button style="margin: 5px;" class="btn btn-danger" type="button" [disabled]="Boolean" (click)="Eliminar()">Eliminar</button> 
-        <button style="margin: 5px;" class="btn btn-danger" type="button" [disabled]="Boolean" (click)="Limpiar()">Cancelar</button>  
+        <button style="margin: 5px;" class="btn btn-primary btn-lg" type="button" [disabled]="Boolean2"(click)="Mostrar()">Consultar</button>
+        <button style="margin: 5px;"class="btn btn-success btn-lg" type="button" [disabled]="Boolean" (click)="Guardar()">Guardar</button>
+        <button style="margin: 5px;" class="btn btn-danger btn-lg" type="button" [disabled]="Boolean" (click)="Eliminar()">Eliminar</button> 
+        <button style="margin: 5px;" class="btn btn-danger btn-lg" type="button" [disabled]="Boolean" (click)="Limpiar()">Cancelar</button>  
     </div>
   </div>
 

@@ -19,6 +19,7 @@ export class AppComponent {
   constructor(private Checar : LoginComponent){
     this.mostrarLogin = true;
     this.mostrarPanel = false; 
+    this.EstaLog();
   }
   addItem(newItem: any) {
 
@@ -37,6 +38,5 @@ export class AppComponent {
     return this.Checar.DesLoguear();
   }
 }
-
 
 

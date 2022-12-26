@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioPedidoService } from 'src/app/Services/servicio-pedido.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pedidos',
@@ -11,6 +11,7 @@ export class PedidosComponent implements OnInit {
   IdCliente : any;
   NombrePedido : any;
   ObsPedido : any;
+  Precio : any;
   Boolean : Boolean;
   Boolean2 : Boolean;
   Entidad : any;
@@ -28,6 +29,14 @@ export class PedidosComponent implements OnInit {
   }
 
   Guardar(){
+    if(!this.IdCliente || !this.NombrePedido || !this.Precio || !this.ObsPedido){
+      Swal.fire({
+        icon: 'error',
+        title: 'Alerta!...',
+        text: 'LLene completamente el formulario!',
+      })
+      return;
+    }
     Swal.fire({
       title: 'Dar de alta este pedido?',
       text: "Añadir un nuevo pedido?!",
@@ -53,11 +62,12 @@ export class PedidosComponent implements OnInit {
 
   }
   Filtrar(){
-    this.Entidad = {"idCliente" : this.IdCliente,"nombrePedido" : this.NombrePedido, "Observaciones" : this.ObsPedido}
+    this.Entidad = {"idCliente" : this.IdCliente,"nombrePedido" : this.NombrePedido, "Observaciones" : this.ObsPedido, "Precio" : this.Precio}
   }
   Vaciar(){
     this.IdCliente = "";
     this.NombrePedido ="";
     this.ObsPedido = "";
+    this.Precio = "";
   }
 }

@@ -5,8 +5,8 @@
 <div class="contenedor">
     <table>
       <tr>
-        <td><input [(ngModel)]="filtro" class="form-control" placeholder="Buscar por Nombre" (keypress)="validarTecla($event)"></td>
-        <td><button class="btn btn-dark" (click)="Filtrar()" >Filtrar</button></td>
+        <td><input [(ngModel)]="filtro" class="form-control input-editar" placeholder="Buscar por Nombre" (keypress)="validarTecla($event)"></td>
+        <td><button class="btn btn-dark btn-lg" (click)="Filtrar()" >Filtrar</button></td>
       </tr>
     </table>
     <div class="card border-primary">
@@ -21,6 +21,7 @@
                     <th scope="col">Id del Cliente</th>
                     <th scope="col">Nombre Del Cliente</th>
                     <th scope="col">Nombre del Pedido</th>
+                    <th scope="col">Precio</th>
                     <th scope="col">Observaciones del Pedido</th>
                   </tr>
                 </thead>
@@ -30,6 +31,7 @@
                     <td>{{e.IdCliente}}</td>
                     <td>{{e.NombreCliente}}</td>
                     <td>{{e.NombrePedido}}</td>
+                    <td>${{e.Precio}}</td>
                     <td>{{e.Observaciones}}</td>                    
                   </tr>
                 </tbody>
@@ -40,6 +42,7 @@
                     <td>{{e.IdCliente}}</td>
                     <td>{{e.NombreCliente}}</td>
                     <td>{{e.NombrePedido}}</td>
+                    <td>${{e.Precio}}</td>
                     <td>{{e.Observaciones}}</td>                    
                   </tr>
                 </tbody>

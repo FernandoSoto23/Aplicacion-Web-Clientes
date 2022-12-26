@@ -1,25 +1,18 @@
 
 
-<div class="contenedor">
-  
-  <!-- <app-login (newID)="addItem($event)"></app-login>
- -->
 
+<div class="header-principal">
+  <nav class="contenedor header">
+        <div class="navegacion">
+          <ul>
+            <li>
+              <a  [routerLink] = "'/Home/'" >Inicio</a>
+            </li>
+          </ul>
 
-  <nav   class="navbar navbar-expand-lg contenedor">
-    <div class="container-fluid contenedor">
-      <a class="navbar-brand a" [routerLink] = "'/Home/'" >Inicio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-
-      <div class="contenedor-flex">
-
-        <div class="collapse navbar-collapse " id="navbarSupportedContent" >
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="EstaLog()">
-            <li class="nav-item">
-              <a class="dropdown-item nav-link"  [routerLink] = "'/Cliente/'"><li class="fas-fa-money-check-alt">Cliente</li></a>
+          <ul class="navegacion-opciones" *ngIf="EstaLog()">
+            <li >
+              <a id="a-click" class="dropdown-item nav-link"  [routerLink] = "'/Cliente/'"><li class="fas-fa-money-check-alt">Cliente</li></a>
             </li>
             <li class="nav-item">
               <a class="dropdown-item nav-link" [routerLink] = "'/ListaCliente/'"><li class="fas-fa-money-check-alt">Lista de Cliente</li></a>
@@ -31,23 +24,19 @@
               <a class="dropdown-item nav-link" [routerLink] = "'/ListaPedidos/'"><li class="fas-fa-money-check-alt">Lista de Pedidos</li></a>
             </li>
           </ul>
-        </div>
-  
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="dropdown-item nav-link" [routerLink] = "'/Login/'" ><li *ngIf="!EstaLog()" class="fas-fa-money-check-alt">Login</li></a>
+
+
+          <ul >
+            <li>
+              <a [routerLink] = "'/Login/'" ><li *ngIf="!EstaLog()">Login</li></a>
             </li>
-            <li class="nav-item">
-              <a class="dropdown-item nav-link" [routerLink] = "'/Home/'"  (click)="LogOut()"><li *ngIf="EstaLog()" class="fas-fa-money-check-alt">Logout</li></a>
+            <li >
+              <a [routerLink] = "'/Home/'"  (click)="LogOut()"><li *ngIf="EstaLog()" class="fas-fa-money-check-alt">Logout</li></a>
             </li>
           </ul>
+
         </div>
 
-      </div>
-
-
-    </div>
   </nav>
 </div>
 

@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ServicioPedidoListaService } from 'src/app/Services/servicio-pedido-lista.service';
 
@@ -19,6 +20,7 @@ export class ListaPedidoComponent implements OnInit {
   NombreCliente : any;
   NombrePedido : any;
   Observaciones : any;
+  Precio : any;
 
   Entidad: any;
 
@@ -32,14 +34,15 @@ export class ListaPedidoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-    Mostrar(){
-      this.servicioListaPedido.Consultar().subscribe((data)=>{
+    async Mostrar(){
+      await this.servicioListaPedido.Consultar().subscribe((data)=>{
         this.Entidad = data;
         this.IdPedido = this.Entidad.IdPedido;
         this.IdCliente = this.Entidad.IdCliente;
         this.NombreCliente = this.Entidad.NombreCliente;
         this.NombrePedido = this.Entidad.NombrePedido;
         this.Observaciones = this.Entidad.Observaciones;
+        this.Precio = this.Entidad.Precio;
       })
     }
     data :any = [];

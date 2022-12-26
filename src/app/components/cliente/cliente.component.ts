@@ -4,6 +4,7 @@ import { EMPTY } from 'rxjs';
 import Swal from 'sweetalert2'
 import { ServicioClienteService } from '../../Services/servicio-cliente.service';
 import { Router,ActivatedRoute } from '@angular/router';
+import { LoginComponent } from '../login/login.component'; 
 
 @Component({
   selector: 'app-cliente',
@@ -24,9 +25,11 @@ export class ClienteComponent implements OnInit {
   Entidad:any;
   constructor(private ServicioCliente : ServicioClienteService, 
               private router:Router,
-              private  route : ActivatedRoute) 
+              private  route : ActivatedRoute,
+              private Checar : LoginComponent) 
   {
     this.Boolean = true;
+    this.EstaLog();
   }
 
   ngOnInit(): void {
@@ -52,6 +55,7 @@ export class ClienteComponent implements OnInit {
     }
       this.ServicioCliente.Consultar(this.Id).subscribe((data)=>{
         this.Entidad = data;
+        this.Id = this.Entidad.Id;
         this.Nombre = this.Entidad.Nombre;
         this.Direccion = this.Entidad.Direccion;
         this.RFC = this.Entidad.RFC;
@@ -109,4 +113,17 @@ export class ClienteComponent implements OnInit {
   Boton(evento : any){
     console.log(evento.Escape);
   }
+
+
+  //Checar logueo si recargo
+  EstaLog(){
+    return this.Checar.EstaLogueado();
+  }
+  
+
 }
+
+
+
+
+

@@ -7,21 +7,25 @@
     <div class="card-body">
         <table>
             <tr>
-                <td><label class="colFormLabel">Id del Cliente:</label></td>
-                <td><input class="form-control" [(ngModel)]="IdCliente"  placeholder="Ingrese un ID"></td>
+                <td><label class="colFormLabel">Id del Cliente: </label></td>
+                <td><input class="form-control input-id" [(ngModel)]="IdCliente"  placeholder="ID"></td>
             </tr>
             <tr>
-                <td><label class="colFormLabel">Nombre del Pedido</label></td>
-                <td><input class="form-control"  [(ngModel)]="NombrePedido" (keypress)="validarTecla($event)"></td>
+                <td><label class="colFormLabel">Nombre del Pedido: </label></td>
+                <td><input class="form-control input-editar"  [(ngModel)]="NombrePedido" (keypress)="validarTecla($event)"></td>
             </tr>
+            <tr>
+              <td><label class="colFormLabel">Precio del pedido: $</label></td>
+              <td><input class="form-control input-editar"  [(ngModel)]="Precio" (keypress)="validarTecla($event)"></td>
+          </tr>
             
         </table>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label"  >Observaciones del Pedido</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="ObsPedido"></textarea>
+            <textarea class="form-control textarea-font-size" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="ObsPedido"></textarea>
           </div>
-        <button style="margin: 5px;"class="btn btn-success" type="button" (click)="Guardar()">Añadir Pedido</button>
-        <button style="margin: 5px;" class="btn btn-danger" type="button" (click)="Vaciar()">Cancelar</button>  
+        <button style="margin: 5px;"class="btn btn-success btn-lg" type="button" (click)="Guardar()">Añadir Pedido</button>
+        <button style="margin: 5px;" class="btn btn-danger btn-lg" type="button" (click)="Vaciar()">Cancelar</button>  
     </div>
   </div>
 
