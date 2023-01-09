@@ -43,7 +43,7 @@ export class ListaClienteComponent implements OnInit {
         this.RFC = this.Entidad.RFC;
         this.Correo = this.Entidad.Correo;
         this.Tel = this.Entidad.Telefono;
-        this.Entidad.shift();
+       /*  this.Entidad.shift(); */ /* QUITABA EL PRIMER ELEMENTO DEL ARRAY ENTIDAD */
       })
   }
   data :any = [];
@@ -53,7 +53,7 @@ export class ListaClienteComponent implements OnInit {
     if(e.Nombre.match(this.filtro)){
       this.ocultar = false;
       this.ocultar2 = true;
-      this.data.push(e);
+      this.data.push(e); 
     }
     });
   }
